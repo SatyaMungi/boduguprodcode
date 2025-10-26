@@ -6,10 +6,10 @@
 {% block content %}
 <style>
     /* Page wrapper */
-    .about-us-page {
-        margin-top: 110px; /* space below navbar */
+    /* .about-us-page {
+        margin-top: 110px; 
         margin-bottom: 60px;
-    }
+    } */
 
     /* Page Title */
     .about-us-page h1 {
@@ -106,33 +106,32 @@
             font-size: 18px;
         }
 
-        .stat-title {
-            font-size: 13px;
-        }
+        
     }
 </style>
+ <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{ about.title }}</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active text-white">About</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
 
-<div class="about-us-page text-center">
-
-  <!-- Page Title -->
-  <h1>{{ about.title }}</h1>
-
-  <!-- Banner Image Card -->
-  {% if about.banner_image %}
-  <div class="about-card about-banner">
-      <img src="{{ about.banner_image.url }}" alt="{{ about.title }}">
-  </div>
-  {% endif %}
+<div  class="container-fluid topbar px-0 px-lg-4 bg-light py-2">
 
   <!-- Description Card -->
-  <div class="about-card">
+  <div class="container">
       <div class="about-text text-left">
           {{ about.description|safe }}
       </div>
   </div>
 
   <!-- Stats Section Card -->
-  <div class="about-card stats-section">
+  <div class="container pb-5">
       <div class="row">
           {% for stat in stats %}
           <div class="col-xs-6 col-sm-6 col-md-3">
